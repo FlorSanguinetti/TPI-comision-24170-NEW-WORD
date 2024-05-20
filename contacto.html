@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Word - Contacto</title>
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/470a8e8aac.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header id="idheader">
+    </header>
+
+    <main>
+        <div class="container">
+
+            <form action="/submit" method=post id="formulario">
+
+                <h3>Datos Personales</h3>
+
+                <div class="caja_datos grid_datos">
+                    <label for="nombre">Nombre:*</label>
+                    <input type="text" name="nombre" id="nombre" size="15" maxlength="12">
+                    <label for="apellido">Apellido:*</label>
+                    <input type="text" name="apellido" id="apellido" size="15" placeholder="Ingrese su apellido ....">
+                    <label for="dni">DNI:*</label>
+                    <input type="number" name="dni" id="dni">
+                    <label for="fecnac">Fecha de Nacimiento:</label>
+                    <input type="date" name="fecnac" id="fecnac">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" name="direccion" id="direccion" size="15"
+                        placeholder="Ingrese su dirección ....">
+                    <label for="Numero_Telefonico">Número Telefónico</label>
+                    <input type="number" name="Numero Telefonico" id="Numero_Telefonico">
+                    <label for="correo">E-Mail:*</label>
+                    <input type="email" name="correo" id="correo">
+                    <label for="ocupacion">Ocupación:</label>
+                    <input type="text" name="ocupacion" id="ocupacion" size="15">
+                    <label for="adjunto">Adjuntar Foto</label>
+                    <input type="file" name="adjunto" id="adjunto">
+                </div>
+
+                <div class="caja_genero">
+                    <label>Género: </label>
+                    <input type="radio" name="radio1" id="radio1" value="1">Mujer
+                    <input type="radio" name="radio2" id="radio2" value="2">Hombre
+                </div>
+
+                <label class="label_grid">Estudios:</label>
+                <div class="grid_estudios">
+                    <!-- <label for="op"></label> -->
+                    <input type="checkbox" id="op1" name="op1" value="1" checked>Primario
+                    <input type="checkbox" id="op2" name="op2" value="2">Secundario
+                    <input type="checkbox" id="op3" name="op3" value="3">Terciario
+                    <input type="checkbox" id="op4" name="op4" value="4">Universitario
+                    <input type="checkbox" id="op5" name="op5" value="5">Otro
+                </div>
+
+                <h3>Detalles de los cursos</h3>
+
+                <label class="label_grid">Cursos que te interesan:</label>
+                <div class="grid_cursos">
+                    <input type="radio" id="rb1" name="rb1" value="1">Curso-Niños
+                    <input type="radio" id="rb2" name="rb2" value="2">Curso-Adolescentes
+                    <input type="radio" id="rb3" name="rb3" value="3">Cursos-Adultos
+                </div>
+
+                <label class="label_grid">Frecuencia:</label>
+                <div class="grid_frecuencia">
+                    <input type="checkbox" id="option1" name="option1" value="Lunes" checked>Lunes
+                    <input type="checkbox" id="option2" name="option2" value="Martes">Martes
+                    <input type="checkbox" id="option3" name="option3" value="Miercoles">Miércoles
+                    <input type="checkbox" id="option4" name="option4" value="Jueves">Jueves
+                    <input type="checkbox" id="option5" name="option5" value="Viernes">Viernes
+                </div>
+                <label class="label_grid">Seleccione un turno de preferencia: </label>
+                <div class="grid_turno">
+                    <input type="radio" id="radiob1" name="radiob1" value="Mañana">Mañana
+                    <input type="radio" id="radiob2" name="radiob2" value="Tarde">Tarde
+                </div>
+                <h3>No olvides dejar tus consultas</h3>
+                <label id="consultas"></label>
+                <textarea name="comentario" id="comentario" cols="30" rows="10"
+                    placeholder="Ingrese su consulta"></textarea>
+
+                <p>* campo requerido</p>
+                <div class="caja_submit">
+                    <button type="submit">Enviar Datos</button>
+                    <!-- <input type="reset" value="Limpiar formulario"> -->
+                    <button type="reset">Limpiar Formulario</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer id="footer">
+    </footer>
+    <script src="/JS/scriptValidacion.js"></script>
+    <script src="/JS/script.js"></script>
+
+</body>
