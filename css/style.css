@@ -26,7 +26,7 @@ header {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    padding: 1rem;
+    padding: 0,7rem;
 }
 
 .header-logo {
@@ -35,8 +35,8 @@ header {
     overflow: auto;
 }
 
-.logo {
-    width: 10rem;
+.logo{
+    width: 4rem;
 }
 
 .checkbox,
@@ -171,6 +171,7 @@ footer {
     font-weight: bold;
     text-align: center;
     color: #EEEEEE;
+    /* border: black 5px solid; */
 
 }
 .footerContacto{ 
@@ -354,7 +355,7 @@ footer {
 
 /*DISEÑO TAMAÑO MEDIANO*/
 @media only screen and (min-width: 700px) and (max-width: 950px) {
-
+/* 
     .logo {
         width: 7rem;
         padding-top: 15%;
@@ -363,7 +364,7 @@ footer {
     #newWord h5 {
         font-size: 2rem;
         /* border: black 2PX solid; */
-    }
+    } */
 
     .checkbox,
     .icono {
@@ -435,13 +436,13 @@ footer {
     } */
     .footerContacto {
         display: flex;
-        flex-direction: column;
+        /* flex-direction: column; */
+        /* border: black 5px solid; */
     }
     #footerDireccion{
         width: 100%;
     }
 
-}
 
 /*ESTILO FORM*/
 
@@ -606,7 +607,7 @@ h3 {
     }
 }
 
-/* @media screen and (max-width: 576px) {
+@media screen and (max-width: 576px) {
     .grid_estudios, .grid_frecuencia {
         display: grid;
         width: 100%;
@@ -621,9 +622,9 @@ h3 {
         grid-template-columns: 0.05fr 0.5fr 0.05fr 0.5fr;
 
     }
-}  */
+} 
 
-@media screen and (max-width: 576px) {
+/* @media screen and (max-width: 576px) {
 
     .grid_estudios,
     .grid_frecuencia,
@@ -635,10 +636,10 @@ h3 {
         grid-template-columns: 0.1fr 0.9fr;
         grid-auto-rows: 1.5em;
 
-    }
+    } }*/
 
 
-}
+
 
 .grid_estudios>label {
     text-align: start;
@@ -705,7 +706,7 @@ h3 {
 /* estilo de nosotros.html agregados por Mirta */
 #newWord {
     color: #EEEEEE;
-    font-size: 2.5rem;
+    font-size: medium;
     font-weight: bold;
     /* border: black 2PX solid; */
     display: block;
