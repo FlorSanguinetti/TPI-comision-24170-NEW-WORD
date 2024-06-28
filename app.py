@@ -44,9 +44,9 @@ class Alumnos:
 
         self.cursor = self.conn.cursor(dictionary=True)
 
-    def agregar_alumno(self, dni, nombre, apellido, email, nivel, imagen):
+    def agregar_alumno(self, dni, nombre, apellido, email, nivel, imagen_url):
         sql = "INSERT INTO newwordalumnos (dni, nombre, apellido, email, nivel, imagen_url) VALUES (%s, %s, %s, %s, %s, %s)"
-        valores = (dni, nombre, apellido, email, nivel, imagen)
+        valores = (dni, nombre, apellido, email, nivel, imagen_url)
         try:
             self.cursor.execute(sql,valores)
             self.conn.commit()
@@ -99,9 +99,9 @@ class Alumnos:
     
 #Programa principal
 
-newword = Alumnos(host='localhost', user='root', password='', database='newwordalumnos')
+newword = Alumnos(host='frsanguinetti.mysql.pythonanywhere-services.com', user='frsanguinetti', password='PALMAnova123*', database='frsanguinetti$newwordalumnos')
 
-ruta_destino = './static/imagenes/'
+ruta_destino = '/home/frsanguinetti/mysite/static/imagenes/'
 
 @app.route("/newwordalumnos", methods=["GET"])
 def listar_alumnos():
@@ -132,9 +132,10 @@ def agregar_alumno():
     nombre_imagen = secure_filename(imagen.filename)  
     nombre_base, extension = os.path.splitext(nombre_imagen)  
     nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}"  
-    nuevo_dni = newword.agregar_alumno( dni, nombre, apellido, email, nivel, imagen) 
+    
+    nuevo_dni = newword.agregar_alumno( dni, nombre, apellido, email, nivel, nombre_imagen) 
 
-    if nuevo_dni:     
+    if nuevo_dni is not None:     
         imagen.save(os.path.join(ruta_destino, nombre_imagen)) 
         return jsonify({"mensaje": "Alumno agregado correctamente.", "dni": nuevo_dni, "imagen": nombre_imagen}), 201 
     else: 
@@ -158,7 +159,7 @@ def modificar_alumno(dni):
         # Guardar la imagen en el servidor 
         imagen.save(os.path.join(ruta_destino, nombre_imagen)) 
          
-        # Busco el producto guardado 
+        # Busco el producto guardado
         alumno = newword.consultar_alumno(dni) 
         if alumno:
             imagen_vieja = alumno["imagen_url"] 
