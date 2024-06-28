@@ -26,19 +26,19 @@ header {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    padding: 0,7rem;
+    padding: 0, 7rem;
 }
 
 .header-logo {
     /* border: 2px rgb(21, 0, 128) solid; */
     width: fit-content;
-    overflow: auto;  
+    overflow: auto;
     display: flex;
     align-items: center;
 }
 
 
-.logo{
+.logo {
     width: 6rem;
 }
 
@@ -196,20 +196,23 @@ footer {
 }
 
 
-.footer-contacto{
+.footer-contacto {
     flex: 1;
-    min-width: 18.75rem; /* 300px / 16 */
-    margin: 0.625rem; /* 10px / 16 */
+    min-width: 18.75rem;
+    /* 300px / 16 */
+    margin: 0.625rem;
+    /* 10px / 16 */
     /* border: pink 2px solid;     */
 }
 
-#footer-direccion{
+#footer-direccion {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     text-align: center;
     justify-content: center;
-    font-size: 1rem; /* 16px / 16 */
+    font-size: 1rem;
+    /* 16px / 16 */
     /* border: #DA1212 2px solid; */
 }
 
@@ -218,33 +221,39 @@ footer {
 #footer-direccion h5 {
     display: flex;
     align-items: center;
-    margin: 0.3125rem 0; /* 5px / 16 */
+    margin: 0.3125rem 0;
+    /* 5px / 16 */
     /* border: black 2px solid; */
     justify-content: center;
 
 }
 
 #footer-direccion i {
-    margin-right: 0.625rem; /* 10px / 16 */
-    font-size: 1.25rem; /* 20px / 16 */
+    margin-right: 0.625rem;
+    /* 10px / 16 */
+    font-size: 1.25rem;
+    /* 20px / 16 */
     /* border: #DA1212 2px solid; */
-    
+
 }
 
 #iframe {
     width: 100%;
-    height: 15.625rem; /* 250px / 16 */
+    height: 15.625rem;
+    /* 250px / 16 */
     border: none;
 }
 
 footer h7 {
-    font-size: 0.875rem; /* 14px / 16 */
+    font-size: 0.875rem;
+    /* 14px / 16 */
     text-align: center;
-    margin-top: 1.25rem; /* 20px / 16 */
+    margin-top: 1.25rem;
+    /* 20px / 16 */
     display: block;
     /* border: #DA1212 2px solid; */
 
-}  
+}
 
 /*STYLE HOJA CURSOS*/
 .section {
@@ -432,8 +441,7 @@ h3 {
 .caja_submit>button:hover {
     cursor: pointer;
     background-color: #DA1212;
-    animation: 0.5s infinite 
-
+    animation: 0.5s infinite
 }
 
 .caja_submit>button a:hover {
@@ -460,45 +468,38 @@ h3 {
     width: 100%;
 }
 
-/* Estilos para todo el proyecto */ 
- 
+/* Estilos para todo el proyecto */
 
-.contenedor-centrado { 
-    display:flex; 
-    width: 100%; 
-    justify-content: center; 
-} 
+.title3 {
+    /* border: 2px purple solid; */
+    background-color: #DA1212;
+    width: 20%;
+    padding: 1rem;
+    color: #EEEEEE;
+    margin-top: 2rem;
 
-#hoover:hover { 
-    background-color: #c26262; 
-} 
- 
-.logo-centrado{ 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    margin-bottom: 5px; 
-    margin-top: 120px; 
-} 
- 
-.navbar-index{ 
-    margin: 0; 
-    padding: 0; 
-     
-    top: 0; 
-    width: 100vw; 
-    height: 100px; 
-    /* background-color: #390E8C;  */
-    display: flex; 
-    justify-content: flex-start; 
-    align-items: center;  
-     
-    overflow: hidden; 
-    margin-bottom: 20px; 
-    position: fixed !important;  
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
-} 
- 
+}
+
+.contenedor-centrado {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#hoover:hover {
+    background-color: #c26262;
+}
+
+.logo-centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-top: 120px;
+}
+
+
+
 /* .logo-nav{ 
     height: 80%; 
     overflow: hidden; 
@@ -511,95 +512,443 @@ h3 {
 } 
   */
 
- 
-table { 
-    max-width: 90%; 
-    margin: 0 auto; 
+
+table {
+    max-width: 90%;
+    margin: 0 auto;
     margin-bottom: 5%;
-    padding: 20px; 
+    padding: 20px;
     /* background-color: #390e8c;  */
     border: 1px solid lightslategray;
-    border-radius: 5px; 
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     background-color: #EEEEEE;
-} 
-
-.fila{
-    /* border: red solid 2rem; */
-    padding: 1.5rem;
 }
- 
-label { 
-    display: block; 
-    margin-bottom: 5px; 
+
+.fila {
+    /* border: red solid 2rem; */
+    padding: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
     color: #ffffff;
     text-align: left;
-} 
-
-#formulario1 { 
-    max-width: 400px; 
-    margin: 0 auto; 
-    margin-bottom: 5%;
-    padding: 20px; 
-    background-color: #11468F; 
-    border: 1px solid lightslategray; 
-    border-radius: 5px; 
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
-} 
-
-#form-obtener-alumno{
-    max-width: 50%; 
-    margin: 0 auto; 
-    margin-bottom: 5%;
-    padding: 20px; 
-    background-color: #11468F; 
-    border: 1px solid lightslategray; 
-    border-radius: 5px; 
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
 }
- 
-input[type="text"], 
+
+#formulario1 {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    padding: 20px;
+    background-color: #11468F;
+    border: 1px solid lightslategray;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+#form-obtener-alumno {
+    max-width: 50%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    padding: 20px;
+    background-color: #11468F;
+    border: 1px solid lightslategray;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+input[type="text"],
 input[type="number"],
 input[type="email"],
-textarea { 
-    width: 90%; 
-    padding: 10px; 
-    margin-bottom: 10px; 
-    border: 1px solid #cccccc; 
-    border-radius: 5px; 
-    
-} 
- 
- 
-button,
+textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
 
-#menuPrincipal { 
-    padding: 8px; 
-    margin:4px; 
-    margin-bottom: 1%;
-    background-color: #007bff; 
-    color: #ffffff; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-} 
- 
-button:hover { 
-    background-color: #0056b3; 
-} 
- 
-a { 
-    padding: 8px; 
-    margin:4px; 
-    /* background-color: #11468F;  */
-    color: #11468F; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    text-decoration: none; 
-    font-size: 85%; 
-    font-weight: 800; 
 }
-#alumnos-table{
+
+
+button,
+#menuPrincipal {
+    padding: 8px;
+    margin: 4px;
+    margin-bottom: 1%;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+a {
+    padding: 8px;
+    margin: 4px;
+    /* background-color: #11468F;  */
+    color: #11468F;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 85%;
+    font-weight: 800;
+}
+
+#alumnos-table {
     display: none;
 }
+
+/*RESPONSIVE*/
+
+/*PEQUEÑO*/
+
+@media (max-width:600px) {
+    .logo {
+        width: 6rem;
+        padding-top: 15%;
+    }
+
+
+    .checkbox,
+    .icono {
+        display: block;
+        position: absolute;
+        right: 2rem;
+        cursor: pointer;
+        width: 2rem;
+        height: 2rem;
+        color: #EEEEEE;
+    }
+
+
+    .icono {
+        pointer-events: none;
+    }
+
+
+    .checkbox {
+        opacity: 0;
+    }
+
+
+    .cruz {
+        display: none;
+    }
+
+
+    .checkbox:checked~.hamburguesa {
+        display: none;
+    }
+
+
+    .checkbox:checked~.cruz {
+        display: block;
+    }
+
+
+    .lista {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 6rem;
+        background-color: #11468F;
+        padding: 1rem;
+        z-index: 100;
+    }
+
+
+    .lista li {
+        padding: 1rem;
+    }
+
+
+    .checkbox:checked~.lista {
+        display: block;
+    }
+
+    .title,
+    .title2,
+    .title3 {
+        width: fit-content;
+        font-size: medium;
+    }
+
+
+    .cursos {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        position: absolute;
+        gap: 1rem;
+        align-items: center;
+    }
+
+
+    .article-content {
+        display: flex;
+        width: 95%;
+        justify-content: center;
+        font-size: medium;
+    }
+
+    #newWord h5 {
+        font-size: 1rem;
+        /* border: black 2PX solid; */
+    }
+
+    #form-obtener-alumno {
+        max-width: 100%;
+        padding: 0.625rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .footer-contacto,
+    .footer-mapa {
+        max-width: 37.5rem;
+        /* 600px / 16 */
+        margin: 0.625rem 0;
+        /* 10px / 16 */
+    }
+
+
+    #iframe {
+        height: 12.5rem;
+        /* 200px / 16 */
+    }
+
+
+}
+
+/*DISEÑO TAMAÑO MEDIANO*/
+
+@media only screen and (min-width: 600px) and (max-width: 950px) {
+    .logo {
+        width: 6rem;
+        padding-top: 15%;
+    }
+
+
+    #newWord h5 {
+        font-size: 2rem;
+        /* border: black 2PX solid; */
+    }
+
+
+    .checkbox,
+    .icono {
+        display: block;
+        position: absolute;
+        right: 2rem;
+        cursor: pointer;
+        width: 2rem;
+        height: 2rem;
+        color: #EEEEEE;
+    }
+
+
+    .icono {
+        pointer-events: none;
+    }
+
+
+    .checkbox {
+        opacity: 0;
+    }
+
+
+    .cruz {
+        display: none;
+    }
+
+
+    .checkbox:checked~.hamburguesa {
+        display: none;
+    }
+
+
+    .checkbox:checked~.cruz {
+        display: block;
+    }
+
+
+    .lista {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 9rem;
+        background-color: #11468F;
+        padding: 1rem;
+    }
+
+
+    .lista li {
+        padding: 1rem;
+    }
+
+
+    .checkbox:checked~.lista {
+        display: block;
+        z-index: 100;
+    }
+
+
+    .article-content {
+        display: flex;
+        width: 95%;
+        justify-content: center;
+        font-size: medium;
+    }
+
+
+    .title,
+    .title2,
+    .title3 {
+        width: fit-content;
+        font-size: medium;
+    }
+
+    #form-obtener-alumno {
+        max-width: 90%;
+    }
+    /* .main {
+            position: relative;
+            z-index: -1;
+            font-size: 3mm;
+        } */
+    .footerContacto {
+        display: flex;
+        /* flex-direction: column; */
+        /* border: black 5px solid; */
+    }
+
+    #footerDireccion {
+        width: 100%;
+    }
+
+} 
+
+    /*RESPOSIVE FORM*/
+    @media screen and (max-width: 950px) {
+        .grid_datos {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr 3fr;
+            grid-auto-rows: 3em;
+            grid-gap: 0 0.6rem;
+            grid-row-gap: 1rem;
+        }
+
+
+    }
+
+
+    @media screen and (max-width: 600px) {
+        .grid_datos {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-auto-rows: 2em;
+            grid-gap: 0 0.6rem;
+            grid-row-gap: 1rem;
+        }
+
+
+        .grid_estudios,
+        .grid_frecuencia,
+        .grid_cursos {
+            display: grid;
+            width: 100%;
+            align-items: center;
+            text-align: start;
+            grid-template-columns: 0.1fr 0.9fr;
+            grid-auto-rows: 1.5em;
+
+
+        }
+
+    }
+
+
+    @media screen and (max-width: 768px) {
+        .grid_titulo {
+            display: grid;
+            justify-items: center;
+            grid-template-columns: 1fr 4fr 1fr;
+            grid-template-areas: ". logo ."
+                ". titulo .";
+            grid-gap: 0;
+        }
+
+
+        .grid_estudios,
+        .grid_frecuencia {
+            display: grid;
+            width: 100%;
+            align-items: center;
+            text-align: start;
+            grid-template-columns: 0.1fr 0.4fr 0.1fr 0.4fr 0.1fr 0.4fr 0.1fr 0.4fr;
+            grid-auto-rows: 1.5em;
+
+
+        }
+
+
+        .grid_cursos {
+            width: 100%;
+        }
+    }
+
+
+    @media screen and (max-width: 576px) {
+
+        .grid_estudios,
+        .grid_frecuencia {
+            display: grid;
+            width: 100%;
+            align-items: center;
+            text-align: start;
+            grid-template-columns: 0.1fr 0.4fr 0.1fr 0.4fr 0.1fr 0.4fr;
+            grid-auto-rows: 1.5em;
+
+        }
+
+        .grid_cursos {
+            width: 100%;
+            grid-template-columns: 0.05fr 0.5fr 0.05fr 0.5fr;
+
+
+        }
+    }
+
+
+    /* @media screen and (max-width: 576px) {
+
+
+    .grid_estudios,
+    .grid_frecuencia,
+    .grid_cursos {
+        display: grid;
+        width: 100%;
+        align-items: center;
+        text-align: start;
+        grid-template-columns: 0.1fr 0.9fr;
+        grid-auto-rows: 1.5em;
+
+
+    } }*/
