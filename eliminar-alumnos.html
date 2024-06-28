@@ -118,8 +118,10 @@
                             const alumnosTable = document.getElementById('alumnos-table');
                             alumnosTable.style.display = 'none'; // Oculta la tabla después de eliminar el alumno
                             alert('Alumno eliminado correctamente.');
+                            limpiarFormulario();
                         } else {
                             alert('Error eliminando el alumno.');
+                            limpiarFormulario();
                         }
                     })
                     .catch(error => {
@@ -133,6 +135,9 @@
             const dni = document.getElementById('dni').value;
             buscarAlumnoPorDNI(dni);
         });
+        function limpiarFormulario() {
+            document.getElementById('dni').value = '';
+        } 
     </script>
 </body>
 
