@@ -107,28 +107,22 @@
             body: formData // Aquí enviamos formData. Dado que formData puede contener archivos, no se utiliza JSON.
         })
         //Después de realizar la solicitud POST, se utiliza el método then() para manejar la respuesta del servidor.
-        .then(function (response) {
-            if (response.ok) {
-                //Si la respuesta es exitosa, convierte los datos de la respuesta a formato JSON.
-                return response.json();
-            } else {
-            
-            return response.json().then(function (data) {
-                throw new Error(data.mensaje || 'Error al agregar el alumno.');
-            });
+        .then(response => response.json().then(data => {
+        if (!response.ok) {
+            throw new Error(data.mensaje || 'Error al agregar el alumno.');
         }
-        })
-        //Respuesta OK, muestra una alerta informando que el producto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo producto.
-        .then(function (data) {
-            alert('Alumno agregado correctamente.');
-            document.getElementById('formulario1').reset();
-        })
-        // En caso de error, mostramos una alerta con un mensaje de error.
-        .catch(function (error) {
-            alert(error.message);
-        })
-        
+        return data;
+    }))
+    // Respuesta OK, muestra una alerta informando que el producto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo producto.
+    .then(data => {
+        alert('Alumno agregado correctamente.');
+        document.getElementById('formulario1').reset();
+    })
+    // En caso de error, mostramos una alerta con un mensaje de error.
+    .catch(error => {
+        alert(error.message);
     });
+});
     </script>
 </body>
 </html>
