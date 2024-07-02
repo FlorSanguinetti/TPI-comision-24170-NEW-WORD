@@ -824,6 +824,16 @@ a {
         width: fit-content;
         font-size: medium;
     }
+    .cursos {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        /* position: absolute; */
+        gap: 1rem;
+        align-items: center;
+        width:70%;
+        left: 10%;
+    }
 
     #form-obtener-alumno {
         max-width: 90%;
@@ -833,6 +843,7 @@ a {
             z-index: -1;
             font-size: 3mm;
         } */
+
     .footerContacto {
         display: flex;
         /* flex-direction: column; */

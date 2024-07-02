@@ -52,14 +52,12 @@ class Alumnos:
             self.conn.commit()
             return self.cursor.lastrowid
         except mysql.connector.IntegrityError as e:
-            if "1062" in str(e):
-                print(f"Error: Ya existe un alumno con el DNI {dni}.")
+            if e.errno == 1062:  # 1062 indica error en clave primaria
+                return {"error": "Ya existe un alumno con el DNI proporcionado."}
             else:
-                print(f"Error al agregar alumno: {e}")
-            return None
+                return {"error": f"Error al agregar alumno: {e}"}
         except Error as e:
-            print(f"Error al ejecutar la consulta: {e}")
-            return None
+            return {"error": f"Error al ejecutar la consulta: {e}"}
         
     def consultar_alumno(self, dni):
         self.cursor.execute(f"SELECT * FROM newwordalumnos WHERE dni = {dni}")
@@ -119,27 +117,35 @@ def mostrar_alumnos(dni):
 @app.route("/newwordalumnos", methods=["POST"])
 def agregar_alumno(): 
 
-    #Recojo los datos del form 
-    dni = request.form['dni'] 
-    nombre = request.form['nombre'] 
-    apellido = request.form['apellido'] 
-    email = request.form['email']   
-    nivel = request.form['nivel']   
-    imagen = request.files['imagen'] 
-    nombre_imagen = "" 
+    try:
+        #print("Iniciando el proceso de agregar alumno...")
+        #Recojo los datos del form 
+        dni = request.form['dni'] 
+        nombre = request.form['nombre'] 
+        apellido = request.form['apellido'] 
+        email = request.form['email']   
+        nivel = request.form['nivel']   
+        imagen = request.files['imagen'] 
+        nombre_imagen = "" 
 
-    # Genero el nombre de la imagen 
-    nombre_imagen = secure_filename(imagen.filename)  
-    nombre_base, extension = os.path.splitext(nombre_imagen)  
-    nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}"  
-    
-    nuevo_dni = newword.agregar_alumno( dni, nombre, apellido, email, nivel, nombre_imagen) 
+        # Genero el nombre de la imagen 
+        nombre_imagen = secure_filename(imagen.filename)  
+        nombre_base, extension = os.path.splitext(nombre_imagen)  
+        nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}"  
+        
+        
+        resultado = newword.agregar_alumno(dni, nombre, apellido, email, nivel, nombre_imagen)
+        #print(f"Resultado de agregar_alumno: {resultado}")
 
-    if nuevo_dni is not None:     
-        imagen.save(os.path.join(ruta_destino, nombre_imagen)) 
-        return jsonify({"mensaje": "Alumno agregado correctamente.", "dni": nuevo_dni, "imagen": nombre_imagen}), 201 
-    else: 
-        return jsonify({"mensaje": "Error al agregar el producto."}), 500
+        if isinstance(resultado, dict) and "error" in resultado:
+            #print(f"Error al agregar alumno: {resultado['error']}")
+            return jsonify({"mensaje": resultado["error"]}), 400
+
+        imagen.save(os.path.join(ruta_destino, nombre_imagen))
+        return jsonify({"mensaje": "Alumno agregado correctamente.", "dni": resultado, "imagen": nombre_imagen}), 201
+    except Exception as e:
+        #print(f"Excepción general: {str(e)}")
+        return jsonify({"mensaje": f"Error al agregar el alumno: {str(e)}"}), 500
 
 @app.route("/newwordalumnos/<int:dni>", methods=["PUT"]) 
 def modificar_alumno(dni): 
