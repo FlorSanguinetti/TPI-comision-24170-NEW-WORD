@@ -134,11 +134,19 @@ def agregar_alumno():
         resultado = newword.agregar_alumno(dni, nombre, apellido, email, nivel, nombre_imagen)
         #print(f"Resultado de agregar_alumno: {resultado}")
 
-        if "error" in resultado:
-            raise ValueError(resultado["error"])
+        
+        # Verificar si resultado es un diccionario de error
+        if isinstance(resultado, dict) and "error" in resultado:
+            return jsonify({"mensaje": resultado["error"]}), 400
 
-        imagen.save(os.path.join(ruta_destino, nombre_imagen))
-        return jsonify({"mensaje": "Alumno agregado correctamente.", "dni": resultado, "imagen": nombre_imagen}), 201
+        # Si resultado es un entero (id del nuevo registro)
+        if isinstance(resultado, int):
+            imagen.save(os.path.join(ruta_destino, nombre_imagen))
+            return jsonify({"mensaje": "Alumno agregado correctamente.", "dni": resultado, "imagen": nombre_imagen}), 201
+
+        # Manejo de errores inesperados
+        return jsonify({"mensaje": "Error inesperado al agregar el alumno."}), 500
+
     except Exception as e:
         return jsonify({"mensaje": f"Error al agregar el alumno: {str(e)}"}), 500
 @app.route("/newwordalumnos/<int:dni>", methods=["PUT"]) 
